@@ -9,8 +9,6 @@ class LoginForm extends Component {
             password:''
         }
     }
-
-
     updateEmail = (e) =>{
         this.setState({
            email: e.target.value
@@ -21,9 +19,15 @@ class LoginForm extends Component {
             password: e.target.value
         })
     }
+
+    login = (e) => {
+        e.preventDefault();
+        this.props.onLogin(this.state.email);
+    }
+
     render(){
         return (
-            <form onSubmit={this.props.onLogin}>
+            <form onSubmit={this.login}>
                 <input type='email'
             placeholder='Email...' 
             value={this.state.email} 

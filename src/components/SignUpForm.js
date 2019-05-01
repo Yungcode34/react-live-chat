@@ -20,11 +20,20 @@ class SignUpForm extends Component {
             password: e.target.value
         })
     }
+    onSubmit = (e) =>{
+        e.preventDefault();
+        this.props.onSignUp(this.state);
+        this.setState({
+            email: '',
+            password: ''
+
+        });
+    }
     render(){
         return (
 <div>
             <h1>Hello there! sign up here!</h1>
-            <form onSubmit={this.props.onSignUp}>
+            <form onSubmit={this.onSubmit}>
 
                 <input type="text"
                 placeholder='Email'

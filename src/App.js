@@ -1,24 +1,27 @@
 import React, { Component } from 'react';
 import SignUpForm from './components/SignUpForm'
 import LoginForm from './components/LogInForm';
+import { auth } from './fire';
+
+
 class App extends Component {
   constructor() {
     super()
     this.state = {
-        hasSignedUp: false
+        isLoggedIn: false,
+        email:''
     }
 }
-  handleSignUp = (e) =>{
-    e.preventDefault();
-    this.setState(state => {
-      const newState = Object.assign({}, state);
-      newState.hasSignedUp = !newState.hasSignedUp;
-      return newState;
-    })
+  handleSignUp = ({email, password}) =>{
+    auth.createUserWithEmailAndPassword(email, password)
+    .catch(err => console.log(err));
   }
 
-  handleLogin = (e) => {
-    e.preventDefault();
+  handleLogin = (email) => {
+    this.setState({
+      isLoggedIn: true,
+      email
+    })
     console.log('App', this.state)
   }
   render(){

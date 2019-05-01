@@ -9,13 +9,17 @@ class App extends Component {
     }
 }
   handleSignUp = (e) =>{
-    e.preventDefault()
-    console.log('app component', this.state)
+    e.preventDefault();
+    this.setState(state => {
+      const newState = Object.assign({}, state);
+      newState.hasSignedUp = !newState.hasSignedUp;
+      return newState;
+    })
   }
   render(){
     return (
       <div className="App">
-      <SignUpForm onSingUp={this.handleSignUp}/>
+      <SignUpForm onSignUp={this.handleSignUp}/>
       <pre>{JSON.stringify(this.state, null, 2)}</pre>
       </div>
     );

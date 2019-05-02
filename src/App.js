@@ -3,21 +3,9 @@ import SignUpForm from './components/SignUpForm'
 import LoginForm from './components/LogInForm';
 import { auth } from './fire';
 import SideBar from './components/SideBar';
+import MainPanel from './components/MainPanel';
 import 'bulma/css/bulma.css';
 
-const MainPanel = ({ children }) =>{
-        return (
-      <div className='column hero'>
-        <div className='hero-body'>
-          <div className='columns is-centered'>
-            <div className='column is-half'>
-            {children}
-            </div>
-          </div>
-        </div>
-      </div>
-        )
-};
 
 class App extends Component {
   constructor() {
@@ -25,7 +13,11 @@ class App extends Component {
     this.state = {
         isLoggedIn: false,
         email:'',
-        uid: null
+        uid: null,
+        room: {
+          'hh12':{},
+          'jj34':{}
+        }
     }
 }
   handleSignUp = ({email, password}) =>{

@@ -145,15 +145,16 @@ sendMessage = (message) =>{
   render(){
     return (
       <div className='columns vh-100 is-gapless'>
-      <SideBar logout={this.logout}
+
+      {this.state.isLoggedIn ?
+      
+        <MainPanel>
+                <SideBar logout={this.logout}
         rooms={this.state.rooms}
         selectedRoom={this.state.selectedRoom}
         setRoom={this.setRoom}
         addRoom={this.addRoom}
       />
-
-      {this.state.isLoggedIn ?
-        <MainPanel>
           <ChatPanel  messages={this.state.messages}
             roomId={this.state.selectedRoom}
             email={this.state.email}

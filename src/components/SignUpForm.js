@@ -57,6 +57,8 @@ class SignUpForm extends Component {
               <button type='submit'
               className='button is-fullwidth has-background-link has-text-black'>Sign Up</button>
             </form>
+            <button type='submit'  onClick={this.props.goToLogin}
+              className='button is-fullwidth has-background-link has-text-black'>go to Login Up</button>
             <a role='button' onClick={this.props.goToLogin}>
               Already have an account? Go login!
             </a>

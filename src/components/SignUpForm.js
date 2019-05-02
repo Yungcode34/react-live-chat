@@ -34,12 +34,16 @@ class SignUpForm extends Component {
 <div className='box'>
             <h1>Hello there! sign up here!</h1>
             <form onSubmit={this.onSubmit}>
-
-                <input type="text"
+                <div className='field'>
+                    <div className='control'>
+                    <input type="text"
                 placeholder='Email'
                 value={this.state.email}
                 onChange={this.updateEmail}
                 />
+                    </div>
+                </div>
+
 
                 <input type='password'
                 placeholder='Password'

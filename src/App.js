@@ -54,7 +54,7 @@ class App extends Component {
   render(){
     return (
       <div className='columns vh-100'>
-        <div className='column is-3 hero is-primary'>
+        <div className='column is-3 hero has-background-link'>
           <h1>side bar</h1>
           <div className='control'>
           <button onClick={this.logout} className='button is-fullwidth'>LOG OUT</button>

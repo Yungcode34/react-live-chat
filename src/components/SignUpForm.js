@@ -32,7 +32,7 @@ class SignUpForm extends Component {
     render(){
         return (
 <div className='box'>
-            <h1>Hello there! sign up here!</h1>
+            <h1 className='title'>Sign up here!</h1>
             <form onSubmit={this.onSubmit}>
                 <div className='field'>
                     <div className='control'>
@@ -40,18 +40,23 @@ class SignUpForm extends Component {
                 placeholder='Email'
                 value={this.state.email}
                 onChange={this.updateEmail}
+                className='input'
                 />
                     </div>
                 </div>
 
-
-                <input type='password'
+                <div className='field'>
+                    <div className='control'>
+                    <input type='password'
                 placeholder='Password'
                 value={this.state.password}
                 onChange={this.updatePassword}
+                className='input'
                 />
+                    </div>
+                </div>
 
-                <button type='submit'>sign up!</button>
+                <button type='submit' className='button is-fullwidth has-background-link has-text-black'>sign up!</button>
             </form>
 </div>
         )

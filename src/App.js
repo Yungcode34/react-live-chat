@@ -2,8 +2,22 @@ import React, { Component } from 'react';
 import SignUpForm from './components/SignUpForm'
 import LoginForm from './components/LogInForm';
 import { auth } from './fire';
+import SideBar from './components/SideBar';
 import 'bulma/css/bulma.css';
 
+const MainPanel = ({ children }) =>{
+        return (
+      <div className='column hero'>
+        <div className='hero-body'>
+          <div className='columns is-centered'>
+            <div className='column is-half'>
+            {children}
+            </div>
+          </div>
+        </div>
+      </div>
+        )
+};
 
 class App extends Component {
   constructor() {
@@ -29,6 +43,7 @@ class App extends Component {
         email,
         uid
   });
+  console.log(this.state);
     })
     .catch(err => console.log(err));
 
@@ -38,10 +53,12 @@ class App extends Component {
     auth.signOut()
     .then(()=>{
       this.setState({
+        isLoggedIn: false,
         email:'',
         uid: null,
         //isLoggedIn: false
       });
+      console.log(this.state);
     });
   }
       // <div className="App">
@@ -54,23 +71,11 @@ class App extends Component {
   render(){
     return (
       <div className='columns vh-100'>
-        <div className='column is-3 hero has-background-link'>
-          <h1>side bar</h1>
-          <div className='control'>
-          <button onClick={this.logout} className='button is-fullwidth'>LOG OUT</button>
-          </div>
-        </div>
-        <div className='column hero'>
-          <div className='hero-body'>
-            <div className='columns is-centered'>
-              <div className='column is-half'>
-              <SignUpForm onSignUp={this.handleSignUp}/>
-              <LoginForm onLogin={this.handleLogin}/>
-              <pre>{JSON.stringify(this.state, null, 2)}</pre>
-              </div>
-            </div>
-          </div>
-        </div>
+      <SideBar logout={this.logout} />
+      <MainPanel>
+      <SignUpForm onSignUp={this.handleSignUp}/>
+      <LoginForm onLogin={this.handleLogin}/>
+      </MainPanel>
       </div>
     );
   }

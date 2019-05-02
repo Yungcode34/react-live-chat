@@ -32,7 +32,7 @@ class LoginForm extends Component {
     render(){
         return (
             <div className='box'>
-            <h1 className='title'>Login</h1>
+            <h1 className='title'>Login!</h1>
             <form onSubmit={this.login}>
             <div className='field'>
                 <div className='control'>

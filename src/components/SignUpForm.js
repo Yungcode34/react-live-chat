@@ -31,34 +31,36 @@ class SignUpForm extends Component {
     }
     render(){
         return (
-<div className='box'>
-            <h1 className='title'>Sign up here!</h1>
+            <div className='box column is-half'>
+            <h1 className='title'>Sign Up!</h1>
             <form onSubmit={this.onSubmit}>
-                <div className='field'>
-                    <div className='control'>
-                    <input type="text"
-                placeholder='Email'
-                value={this.state.email}
-                onChange={this.updateEmail}
-                className='input'
-                />
-                    </div>
+              <div className='field'>
+                <div className='control'>
+                  <input type='text'
+                    placeholder='Email'
+                    value={this.state.email}
+                    onChange={this.updateEmail}
+                  className='input'/>
                 </div>
-
-                <div className='field'>
-                    <div className='control'>
-                    <input type='password'
-                placeholder='Password'
-                value={this.state.password}
-                onChange={this.updatePassword}
-                className='input'
-                />
-                    </div>
+              </div>
+    
+              <div className='field'>
+                <div className='control'>
+                  <input type='password'
+                    placeholder='Password'
+                    value={this.state.password}
+                    onChange={this.updatePassword}
+                  className='input'/>
                 </div>
-
-                <button type='submit' className='button is-fullwidth has-background-link has-text-black'>sign up!</button>
+              </div>
+    
+              <button type='submit'
+              className='button is-fullwidth has-background-link has-text-black'>Sign Up</button>
             </form>
-</div>
+            <a role='button' onClick={this.props.goToLogin}>
+              Already have an account? Go login!
+            </a>
+          </div>
         )
     }
 }

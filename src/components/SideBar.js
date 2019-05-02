@@ -1,14 +1,21 @@
-import React from'react';
-const SideBar = ({logout}) => {
+import React from 'react';
 
-    return (
-    <div className='column is-3 hero has-background-link'>
-    <h1>side bar</h1>
-    <div className='control'>
-    <button onClick={logout} className='button is-fullwidth'>LOG OUT</button>
+import RoomList from './RoomList';
+
+const SideBar = ({ logout, rooms, selectedRoom, setRoom, addRoom }) => {
+  return (
+    <div className='column is-3 hero has-background-link has-text-black'
+      style={{ padding: '10px'}}>
+      <RoomList rooms={rooms}
+        selectedRoom={selectedRoom}
+        setRoom={setRoom}
+        addRoom={addRoom}/>
+      <div className='control'>
+        <button onClick={logout}
+        className='button is-fullwidth'>Logout</button>
+      </div>
     </div>
-  </div>
-    )
-  };
+  );
+};
 
-  export default SideBar;
+export default SideBar;

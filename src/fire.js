@@ -10,4 +10,6 @@ const config = {
   };
  const firebaseApp = firebase.initializeApp(config);
 export const auth = firebaseApp.auth();
- export default firebaseApp;
+export const messageRef = firebaseApp.database().ref('messages');
+export const roomRef = firebaseApp.database().ref('rooms');
+export default firebaseApp;

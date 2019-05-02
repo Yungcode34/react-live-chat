@@ -31,7 +31,7 @@ class LoginForm extends Component {
 
     render(){
         return (
-            <div className='box'>
+            <div className='box column is-half'>
             <h1 className='title'>Login!</h1>
             <form onSubmit={this.login}>
             <div className='field'>
@@ -54,6 +54,9 @@ class LoginForm extends Component {
             </div>
             <button typw='submit' className='button is-fullwidth has-background-link has-text-black'>Login</button>
             </form>
+            <a role='button' onClick={this.props.goToSignUp}>
+          Don't have an account? Go signup!
+            </a>
             </div>
         )
     }

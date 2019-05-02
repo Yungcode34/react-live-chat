@@ -31,7 +31,7 @@ class SignUpForm extends Component {
     }
     render(){
         return (
-<div>
+<div className='box'>
             <h1>Hello there! sign up here!</h1>
             <form onSubmit={this.onSubmit}>
 

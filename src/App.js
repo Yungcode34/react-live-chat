@@ -15,8 +15,17 @@ class App extends Component {
         email:'',
         uid: null,
         room: {
-          'hh12':{},
-          'jj34':{}
+          'hh12':{
+            title: 'general',
+            author:'j@j.com',
+            created: Date.now()
+
+          },
+          'jj34':{
+            title:'jokes',
+            author: 'j@j.com',
+            created: Date.now()
+          }
         }
     }
 }

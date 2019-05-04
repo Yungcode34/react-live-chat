@@ -54,9 +54,8 @@ class LoginForm extends Component {
             </div>
             <button typw='submit' className='button is-fullwidth has-background-link has-text-black'>Login</button>
             </form>
-            <a role='button' onClick={this.props.goToSignUp}>
-          Don't have an account? Go signup!
-            </a>
+            <button type='submit'  onClick={this.props.goToSignUp}
+              className='button is-fullwidth has-background-link has-text-black'>Don't have an account? Go signup!</button>
             </div>
         )
     }

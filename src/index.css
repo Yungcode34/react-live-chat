@@ -17,8 +17,8 @@ code {
   height: 100vh;
 }
 .room:hover {
-  background-color: hsl(217, 71%, 53%) !important;
+  background-color: hsl(0, 0%, 100%) !important;
 }
 .active-room {
-  background-color: hsl(217, 71%, 53%) !important;
+  background-color: hsl(0, 0%, 100%) !important;
 }
